@@ -60,3 +60,129 @@ elif (mean(num_aleatorios)<median(num_aleatorios) and median(num_aleatorios)<mod
     print("Sesgo negativo o a la izquierda")
 elif (mode(num_aleatorios) == median(num_aleatorios)) and (mode(num_aleatorios)==mean(num_aleatorios)):
     print("Sin sesgo")
+
+#Ejercicio 7
+
+texto = input("Ingrese un texto o una frase: ")
+agrega = "?"
+ultimo = texto[len(texto)-1]
+if (ultimo == "a" or ultimo == "e" or ultimo == "i" or ultimo == "o" or ultimo == "u" or
+    ultimo == "A" or ultimo == "E" or ultimo == "I" or ultimo == "O" or ultimo == "U"):
+    texto = texto+"!"
+print(texto)
+
+#Ejercicio 8
+
+nombre = input("Ingrese su nombre: ")
+opcion = int(input("Ingrese entre la opción 1, 2 o 3: "))
+
+if opcion == 1:
+    print(nombre.upper())
+elif opcion == 2:
+    print(nombre.lower())
+elif opcion == 3:
+    print(nombre.title())
+else:
+    print("Esa opción no existe")
+
+#Ejercicio 9
+
+magnitud = float(input("Ingrese la magnitud del terremoto: "))
+
+if magnitud<3:
+    print("Muy leve")
+elif magnitud>=3 and magnitud<4:
+    print("Leve")
+elif magnitud>=4 and magnitud<5:
+    print("Fuerte")
+elif magnitud>=6 and magnitud<7:
+    print("Muy fuerte")
+elif magnitud>=7:
+    print("Extremo")
+
+#Ejercicio 10
+
+mes = input("Ingrese mes: ")
+dia = input("Ingrese día: ")
+hemisferio = input("Ingrese hemisferio: ")
+
+hemisferio = hemisferio.lower()
+
+#Hemisferio Norte
+if hemisferio == "norte":
+    #invierno
+    if mes == "diciembre" and dia >= 21:
+        print("Invierno")
+    elif mes == "enero":
+        print("Invierno")
+    elif mes == "febero":
+        print("Invierno")
+    elif mes == "marzo" and dia<=20:
+        print("Invierno")
+    #primavera
+    elif mes == "marzo" and dia >= 21:
+        print("Primavera")
+    elif mes == "abril":
+        print("Primavera")
+    elif mes == "mayo":
+        print("Primavera")
+    elif mes == "junio" and dia<=20:
+        print("Primavera")
+    #Verano
+    elif mes == "junio" and dia >= 21:
+        print("Verano")
+    elif mes == "julio":
+        print("Verano")
+    elif mes == "agosto":
+        print("Verano")
+    elif mes == "septiembre" and dia<=20:
+        print("Verano")
+    #Otoño
+    elif mes == "septiembre" and dia >= 21:
+        print("Otoño")
+    elif mes == "octubre":
+        print("Otoño")
+    elif mes == "noviembre":
+        print("Otoño")
+    elif mes == "diciembre" and dia<=20:
+        print("Otoño")
+
+
+#Hemisferio Sur
+if hemisferio == "sur":
+    #verano
+    if mes == "diciembre" and dia >= 21:
+        print("Verano")
+    elif mes == "enero":
+        print("Verano")
+    elif mes == "febero":
+        print("Verano")
+    elif mes == "marzo" and dia<=20:
+        print("Verano")
+    #otoño
+    elif mes == "marzo" and dia >= 21:
+        print("Otoño")
+    elif mes == "abril":
+        print("Otoño")
+    elif mes == "mayo":
+        print("Otoño")
+    elif mes == "junio" and dia<=20:
+        print("Otoño")
+    #invierno
+    elif mes == "junio" and dia >= 21:
+        print("Invierno")
+    elif mes == "julio":
+        print("Invierno")
+    elif mes == "agosto":
+        print("Invierno")
+    elif mes == "septiembre" and dia<=20:
+        print("Invierno")
+    #primavera
+    elif mes == "septiembre" and dia >= 21:
+        print("Primavera")
+    elif mes == "octubre":
+        print("Primavera")
+    elif mes == "noviembre":
+        print("Primavera")
+    elif mes == "diciembre" and dia<=20:
+        print("Primavera")

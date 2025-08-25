@@ -1,33 +1,86 @@
-#Ejercicio 6
-#El paquete statistics de python contiene funciones que permiten tomar una lista de números
-#y calcular la moda, la mediana y la media de dichos números. Un ejemplo de su uso es el
-#siguiente:
-#from statistics import mode, median, mean
-#mi_lista = [1,2,5,5,3]
-#mean(mi_lista)
-#La moda (mode), la mediana (median) y la media (mean) son parámetros estadísticos que se
-#pueden utilizar para predecir la forma de una distribución normal a partir del siguiente criterio:
-#● Sesgo positivo o a la derecha: cuando la media es mayor que la mediana y, a su vez, la
-#mediana es mayor que la moda.
-#● Sesgo negativo o a la izquierda: cuando la media es menor que la mediana y, a su vez,
-#la mediana es menor que la moda.
-#● Sin sesgo: cuando la media, la mediana y la moda son iguales.
-#Teniendo en cuenta lo antes mencionado, escribir un programa que tome la lista
-#numeros_aleatorios, calcule su moda, su mediana y su media y las compare para determinar si
-#hay sesgo positivo, negativo o no hay sesgo. Imprimir el resultado por pantalla.
-#Definir la lista numeros_aleatorios de la siguiente forma:
-#import random
-#numeros_aleatorios = [random.randint(1, 100) for i in range(50)]
-#Nota: el bloque de código anterior crea una lista con 50 números entre 1 y 100 elegidos de
-#forma aleatoria.
-from statistics import mode, median, mean
-import random
+#Ejercicio 10
 
-num_aleatorios = [random.randint(1, 100) for i in range (50)]
+mes = input("Ingrese mes: ")
+dia = input("Ingrese día: ")
+hemisferio = input("Ingrese hemisferio: ")
 
-if (mean(num_aleatorios)>median(num_aleatorios)) and (median(num_aleatorios)>mode(num_aleatorios)):
-    print("Sesgo positivo o a la derecha")
-elif (mean(num_aleatorios)<median(num_aleatorios) and median(num_aleatorios)<mode(num_aleatorios)):
-    print("Sesgo negativo o a la izquierda")
-elif (mode(num_aleatorios) == median(num_aleatorios)) and (mode(num_aleatorios)==mean(num_aleatorios)):
-    print("Sin sesgo")
+hemisferio = hemisferio.lower()
+
+#Hemisferio Norte
+if hemisferio == "norte":
+    #invierno
+    if mes == "diciembre" and dia >= 21:
+        print("Invierno")
+    elif mes == "enero":
+        print("Invierno")
+    elif mes == "febero":
+        print("Invierno")
+    elif mes == "marzo" and dia<=20:
+        print("Invierno")
+    #primavera
+    elif mes == "marzo" and dia >= 21:
+        print("Primavera")
+    elif mes == "abril":
+        print("Primavera")
+    elif mes == "mayo":
+        print("Primavera")
+    elif mes == "junio" and dia<=20:
+        print("Primavera")
+    #Verano
+    elif mes == "junio" and dia >= 21:
+        print("Verano")
+    elif mes == "julio":
+        print("Verano")
+    elif mes == "agosto":
+        print("Verano")
+    elif mes == "septiembre" and dia<=20:
+        print("Verano")
+    #Otoño
+    elif mes == "septiembre" and dia >= 21:
+        print("Otoño")
+    elif mes == "octubre":
+        print("Otoño")
+    elif mes == "noviembre":
+        print("Otoño")
+    elif mes == "diciembre" and dia<=20:
+        print("Otoño")
+
+
+#Hemisferio Sur
+if hemisferio == "sur":
+    #verano
+    if mes == "diciembre" and dia >= 21:
+        print("Verano")
+    elif mes == "enero":
+        print("Verano")
+    elif mes == "febero":
+        print("Verano")
+    elif mes == "marzo" and dia<=20:
+        print("Verano")
+    #otoño
+    elif mes == "marzo" and dia >= 21:
+        print("Otoño")
+    elif mes == "abril":
+        print("Otoño")
+    elif mes == "mayo":
+        print("Otoño")
+    elif mes == "junio" and dia<=20:
+        print("Otoño")
+    #invierno
+    elif mes == "junio" and dia >= 21:
+        print("Invierno")
+    elif mes == "julio":
+        print("Invierno")
+    elif mes == "agosto":
+        print("Invierno")
+    elif mes == "septiembre" and dia<=20:
+        print("Invierno")
+    #primavera
+    elif mes == "septiembre" and dia >= 21:
+        print("Primavera")
+    elif mes == "octubre":
+        print("Primavera")
+    elif mes == "noviembre":
+        print("Primavera")
+    elif mes == "diciembre" and dia<=20:
+        print("Primavera")
