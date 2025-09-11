@@ -1,25 +1,29 @@
-temperaturas =[
-    [12, 20], #día 1
-    [8, 18],  #día 2
-    [15, 23], #día 3
-    [14, 20], #día 4
-    [8, 15],  #día 5
-    [15, 22], #día 6
-    [19, 25]  #día 7
+reporte_ventas =[
+    [1, 3, 5, 2],
+    [7, 20, 18, 21],
+    [8, 21, 10, 13],
+    [30, 50, 26, 33],
+    [1, 0, 6, 9],
+    [4, 4, 7, 3],
+    [60, 40, 30, 20]
 ]
-suma_min = 0
-suma_max = 0
-cant_filas = len(temperaturas)
-cant_columnas = len(temperaturas[0])
+max = 0
 
-for i in range(cant_filas):
-    for j in range(cant_columnas):
-        if j == 0:
-            suma_min += temperaturas[i][j]
-        else:
-            suma_max += temperaturas[i][j]
+for i in range(len(reporte_ventas)):
+    suma = 0
+    for j in range(len(reporte_ventas[0])):
+        suma += reporte_ventas[i][j]
+    print(f'El día {i+1} vendió un total de: ', suma)
+print()
 
-promedio_min = suma_min/cant_filas
-promedio_max = suma_max/cant_filas
+for k in range(len(reporte_ventas[0])):
+    suma = 0
+    for l in range(len(reporte_ventas)):
+        suma += reporte_ventas[l][k]
+    if suma > max:
+        max = suma
+        producto = k+1
 
-print('El promedio de máximas estuvo en ', promedio_max, ', mientras que el de mínimas estuvo en', promedio_min)
+    print(f'El producto {k+1} vendió un total de: ', suma)
+print()
+print('El producto que más vendió', producto)

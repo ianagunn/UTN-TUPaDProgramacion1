@@ -136,5 +136,87 @@ promedio_max = suma_max/cant_filas
 print('El promedio de máximas estuvo en ', promedio_max, ', mientras que el de mínimas estuvo en', promedio_min)
 
 #Ejercicio 8
+notas =[
+    [10, 6, 7], #estudiante 1
+    [8, 8, 7],  #estudiante 2
+    [6, 7, 9],  #estudiante 3
+    [6, 6, 7],  #estudiante 4
+    [4, 4, 5]   #estudiante 5
+]
+promedio_alumnos = []
+
+for i in range(len(notas)):
+    suma=0
+    for j in range(len(notas[0])):
+        suma += notas[i][j]
+    promedio = suma/(len(notas[0]))
+    print('El promedio del alumno', i+1,'es =', promedio)
+
+for k in range(len(notas[0])):
+    suma=0
+    for l in range(len(notas)):
+        suma += notas[l][k]
+    promedio = suma/(len(notas))
+    print('El promedio de la materia', k+1, 'es', promedio )
+
 #Ejercicio 9
+tateti =[
+    ['-', '-', '-'],
+    ['-', '-', '-'], 
+    ['-', '-', '-'] 
+]
+
+print('Empecemos a jugar TaTeTi!:')
+
+for i in tateti:
+    print(i)
+
+for i in range(9):
+        jugada = '-'
+        x = 0
+        y = 0
+        x = int(input('El jugador debe ingresar la coordenada X: '))
+        y = int(input('El jugador debe ingresar la coordenada Y: '))
+
+        while(jugada != 'X') and (jugada != 'O'):
+             jugada = str(input('Ingrese X o O para marcar su jugada: '))
+
+        if tateti[y][x] == '-':
+            tateti[y][x] = jugada
+        else:
+             print('Ese casillero ya está ocupado, perdiste el turno')
+        for i in tateti:
+            print(i)
+
 #Ejercicio 10
+
+reporte_ventas =[
+    [1, 3, 5, 2],
+    [7, 20, 18, 21],
+    [8, 21, 10, 13],
+    [30, 50, 26, 33],
+    [1, 0, 6, 9],
+    [4, 4, 7, 3],
+    [60, 40, 30, 20]
+]
+max = 0
+
+for i in range(len(reporte_ventas)):
+    suma = 0
+    for j in range(len(reporte_ventas[0])):
+        suma += reporte_ventas[i][j]
+    print(f'El día {i+1} vendió un total de: ', suma)
+print()
+
+for k in range(len(reporte_ventas[0])):
+    suma = 0
+    for l in range(len(reporte_ventas)):
+        suma += reporte_ventas[l][k]
+    if suma > max:
+        max = suma
+        producto = k+1
+
+    print(f'El producto {k+1} vendió un total de: ', suma)
+print()
+print('El producto que más vendió', producto)
+
