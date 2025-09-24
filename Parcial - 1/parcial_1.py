@@ -32,7 +32,9 @@ while True:
 
             while titulo in titulos or titulo == '':
                 print('Título ingresado existente o inválido')
+                print()
                 titulo = input('Ingrese el título nuevamente: ')
+                print()
 
             titulos.append(titulo)
             # agrega el ejemplar en la misma posicion que el titulo para evitar conflictos utilizando index
@@ -49,7 +51,7 @@ while True:
                 print()
                 continue
             
-            ejemplar = int(input('Ingrese la cantidad de ejemplares: '))
+            ejemplar = input('Ingrese la cantidad de ejemplares: ')
             print()
 
             while ejemplar < 0:
@@ -63,14 +65,16 @@ while True:
                 print(f'{i} - {titulo}')
 
             print()    
-            posicion = int(input('Ingrese el número del titular al que desea cambiar la cantidad de ejemplares: '))
+            posicion = input('Ingrese el número del titular al que desea cambiar la cantidad de ejemplares: ')
+            print()
             
             while posicion > len(ejemplares) or posicion < 0:
                 print('El número ingresado no existe')
                 print()
-                posicion = int(input('Ingrese el número del titular al que desea cambiar la cantidad de ejemplares: '))
+                posicion = input('Ingrese el número del titular al que desea cambiar la cantidad de ejemplares: ')
+                print()
 
-            print()
+            posicion = int(posicion)
             ejemplares[posicion] += ejemplar
             print(f'Se agregaron {ejemplar} ejemplares al título "{titulos[posicion]}"')
             print()
@@ -159,7 +163,7 @@ while True:
                     cantidad = input(f'Ingrese la cantidad que desea prestar para el titulo "{titulo}": ')
                     print()
 
-                    while int(cantidad) <= 0:
+                    while not cantidad.isdigit() or int(cantidad) <= 0:
                         print('La cantidad ingresada debe ser mayor a 0')
                         print()
                         cantidad = input(f'Ingrese nuevamente la cantidad que desea prestar para el titulo "{titulo}": ')
