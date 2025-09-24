@@ -43,8 +43,7 @@ while True:
                 continue
             
             ejemplar = input('Ingrese la cantidad de ejemplares: ')
-
-            while not ejemplar.isdigit() or int(ejemplar) < 0:
+            while ejemplar not in ejemplares or ejemplar == '':
                 print('Debe ingresar un número entero mayor o igual a 0')
                 ejemplar = input('Ingrese la cantidad de ejemplares: ')
             ejemplar = int(ejemplar)
@@ -90,8 +89,8 @@ while True:
         case '7':
             print('===== Actualizar ejemplares (préstamo/devolución) =====')
             titulo = input('Ingrese titulo que desea actualizar ejemplares: ')
-            # while not ejemplar.isdigit() or int(ejemplar) < 0:
-            while not titulos.isdigit() or titulo == '':
+        
+            while titulo not in titulos or titulo == '':
                 print('Título ingresado no existente o inválido')
                 titulo = input('Ingrese el título nuevamente: ')
 
