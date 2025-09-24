@@ -90,8 +90,8 @@ while True:
         case '7':
             print('===== Actualizar ejemplares (préstamo/devolución) =====')
             titulo = input('Ingrese titulo que desea actualizar ejemplares: ')
-
-            while titulo not in titulos or titulo == '':
+            # while not ejemplar.isdigit() or int(ejemplar) < 0:
+            while not titulos.isdigit() or titulo == '':
                 print('Título ingresado no existente o inválido')
                 titulo = input('Ingrese el título nuevamente: ')
 
