@@ -41,19 +41,20 @@ while True:
             if not titulos:
                 print('No hay titulos en la lista para ingresar ejemplares')
                 continue
+            
+            ejemplar = input('Ingrese la cantidad de ejemplares: ')
 
-            ejemplar = int(input('Ingrese la cantidad de ejemplares: '))
-
-            while ejemplar < 0:
-                print('El número ingresado es inválido, debe ingresar un número mayor a 0')
+            while not ejemplar.isdigit() or int(ejemplar) < 0:
+                print('Debe ingresar un número entero mayor o igual a 0')
                 ejemplar = input('Ingrese la cantidad de ejemplares: ')
+            ejemplar = int(ejemplar)
             
             for i, titulo in enumerate(titulos):
                 print(f'{i} - {titulo}')
                 
             posicion = int(input('Ingrese a que titular le desea cambiar la cantidad de ejemplares: '))
             ejemplares[posicion] += ejemplar
-            print(f'Se cambio la cantidad de ejemplares a {ejemplar} en el titulo "{titulos[posicion]}"')
+            print(f'Se agregaron ejemplares a {ejemplar} al titulo "{titulos[posicion]}"')
         case '3':
             print('===== Mostrar catálogo =====')
             for i in range(len(titulos)):
