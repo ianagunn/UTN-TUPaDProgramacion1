@@ -114,6 +114,11 @@ while True:
             
             ejemplar = input(f'Ingrese la cantidad de ejemplares: ')
             print()
+            while not ejemplar.isdigit() or int(ejemplar) < 0:
+                print('Debe ingresar un número entero mayor o igual a 0')
+                print()
+                ejemplar = input(f'Ingrese la cantidad de ejemplares nuevamente: ')   
+                print()
 
             titulos.append(titulo)
             # agrega el ejemplar en la misma posicion que el titulo para evitar conflictos utilizando index
