@@ -1,7 +1,7 @@
-# titulos = ['las cosas que perdimos en el fuego', 'el principito', 'el retrato de dorian gray', 'las mil y una noches', 'romeo y julieta']
-# ejemplares = [1, 5, 3, 0, 15]
-titulos = []
-ejemplares = []
+titulos = ['las cosas que perdimos en el fuego', 'el principito', 'el retrato de dorian gray', 'las mil y una noches', 'romeo y julieta']
+ejemplares = [1, 5, 3, 0, 15]
+# titulos = []
+# ejemplares = []
 menu = ['1 - Ingresar títulos',
         '2 - Ingresar ejemplares', 
         '3 - Mostrar catálogo', 
@@ -80,13 +80,13 @@ while True:
             
             ejemplar = input('Ingrese la cantidad de ejemplares: ')
             print()
-            ejemplar = int(ejemplar)
 
-            while ejemplar < 0:
-                print('El número ingresado es inválido, debe ingresar un número mayor a 0')
+            while not ejemplar.isdigit() or int(ejemplar) < 0:
+                print('Debe ingresar un número entero mayor a 0')
                 print()
                 ejemplar = input('Ingrese la cantidad de ejemplares: ')
                 print()
+
             ejemplar = int(ejemplar)
             
             for i, titulo in enumerate(titulos):
@@ -95,14 +95,14 @@ while True:
             print()    
             posicion = input('Ingrese el número del titular al que desea ingresar ejemplares: ')
             print()
-            
+            posicion = int(posicion)
+
             while posicion > len(ejemplares) or posicion < 0:
                 print('El número ingresado no existe')
                 print()
                 posicion = input('Ingrese el número del titular al que desea ingresar ejemplares: ')
                 print()
 
-            posicion = int(posicion)
             ejemplares[posicion] += ejemplar
             print(f'Se agregaron {ejemplar} ejemplares al título "{titulos[posicion]}"')
             print()
@@ -121,7 +121,7 @@ while True:
 
             if consulta in titulos:
                 posicion = titulos.index(consulta)
-                print(f'El ejemplar {consulta} tiene una disponibilidad de {ejemplares[posicion]}')
+                print(f'El ejemplar "{consulta}" tiene una disponibilidad de {ejemplares[posicion]}')
                 print()
             else:
                 print('Titulo no encontrado')
