@@ -1,7 +1,7 @@
-titulos = ['las cosas que perdimos en el fuego', 'el principito', 'el retrato de dorian gray', 'las mil y una noches', 'romeo y julieta']
-ejemplares = [1, 5, 3, 0, 15]
-# titulos = []
-# ejemplares = []
+# titulos = ['las cosas que perdimos en el fuego', 'el principito', 'el retrato de dorian gray', 'las mil y una noches', 'romeo y julieta']
+# ejemplares = [1, 5, 3, 0, 15]
+titulos = []
+ejemplares = []
 menu = ['1 - Ingresar títulos',
         '2 - Ingresar ejemplares', 
         '3 - Mostrar catálogo', 
@@ -27,21 +27,48 @@ while True:
         case '1':
             print('===== Ingresar títulos =====')
             print()
-            titulo = input('Ingrese un nuevo título: ').lower()
-            print()
-
-            while titulo in titulos or titulo == '':
-                print('Título ingresado existente o inválido')
+            if len(titulos) != 0:
+                print('Ya tenes titulos cargados. Para añadir nuevos titulos, utiliza la opción 6 - Agregar título')
                 print()
-                titulo = input('Ingrese el título nuevamente: ')
+                continue
+
+            while True:
+                titulo = input('Ingrese un nuevo título: ').lower()
                 print()
 
-            titulos.append(titulo)
-            # agrega el ejemplar en la misma posicion que el titulo para evitar conflictos utilizando index
-            posicion = titulos.index(titulo)
-            ejemplares.insert(posicion, 0)
-            print(f'Se agregó el nuevo título "{titulo}", con un stock de 0 ejemplares')
-            print()
+                while titulo == '' or titulo in titulos:
+                    print('Título ingresado existente o vacío')
+                    titulo = input('Ingrese un nuevo título: ').lower()
+                    print()
+
+                ejemplar = input(f'Ingrese la cantidad de ejemplares para {titulo}: ')
+                print()
+
+                while not ejemplar.isdigit() or int(ejemplar) < 0:
+                    print('Debe ingresar un número entero mayor o igual a 0')
+                    print()
+                    ejemplar = input('Ingrese la cantidad de ejemplares para {titulo}: ')   
+                    print()
+
+                titulos.append(titulo)
+                posicion = titulos.index(titulo)
+                ejemplar = int(ejemplar)
+                ejemplares.insert(posicion, ejemplar)
+                print(f'Se agregó el nuevo título "{titulo}", con un stock de {ejemplar} ejemplares')
+                print()
+
+                seguir = input('¿Desea agregar más titulos? Marque S para seguir o N para no seguir: ').lower()
+                print()
+                
+                while seguir != 's' and seguir != 'n':
+                    print('Opción ingresada incorrecta')
+                    print()
+                    seguir = input('¿Desea agregar más titulos? Marque S para seguir o N para no seguir: ').lower()
+                    print()
+
+                if seguir == 'n':
+                    break
+
         case '2':
             print('===== Ingresar ejemplares =====')
             print()
@@ -53,6 +80,7 @@ while True:
             
             ejemplar = input('Ingrese la cantidad de ejemplares: ')
             print()
+            ejemplar = int(ejemplar)
 
             while ejemplar < 0:
                 print('El número ingresado es inválido, debe ingresar un número mayor a 0')
@@ -65,13 +93,13 @@ while True:
                 print(f'{i} - {titulo}')
 
             print()    
-            posicion = input('Ingrese el número del titular al que desea cambiar la cantidad de ejemplares: ')
+            posicion = input('Ingrese el número del titular al que desea ingresar ejemplares: ')
             print()
             
             while posicion > len(ejemplares) or posicion < 0:
                 print('El número ingresado no existe')
                 print()
-                posicion = input('Ingrese el número del titular al que desea cambiar la cantidad de ejemplares: ')
+                posicion = input('Ingrese el número del titular al que desea ingresar ejemplares: ')
                 print()
 
             posicion = int(posicion)
@@ -107,33 +135,58 @@ while True:
         case '6':
             print('===== Agregar título =====')
             print()
-            titulo = input('Ingrese el nuevo título: ').lower()
-            print()
 
-            while titulo in titulos or titulo == '':
-                print('Título ingresado existente o inválido')
+            if len(titulos) == 0:
+                print('No tenes titulos cargados. Para cargar titulos debes ingresar la opción 1 - Ingresar títulos')
                 print()
-                titulo = input('Ingrese el título nuevamente: ').lower()
-                print()
-            
-            ejemplar = input(f'Ingrese la cantidad de ejemplares: ')
-            print()
-            while not ejemplar.isdigit() or int(ejemplar) < 0:
-                print('Debe ingresar un número entero mayor o igual a 0')
-                print()
-                ejemplar = input(f'Ingrese la cantidad de ejemplares nuevamente: ')   
+                continue
+
+            while True:
+                titulo = input('Ingrese un nuevo título: ').lower()
                 print()
 
-            titulos.append(titulo)
-            # agrega el ejemplar en la misma posicion que el titulo para evitar conflictos utilizando index
-            posicion = titulos.index(titulo)
-            ejemplar = int(ejemplar)
-            ejemplares.insert(posicion, ejemplar)
-            print(f'Se agregó el nuevo título "{titulo}", con un stock de {ejemplar} ejemplares')
-            print()
+                while titulo == '' or titulo in titulos:
+                    print('Título ingresado existente o vacío')
+                    titulo = input('Ingrese un nuevo título: ').lower()
+                    print()
+
+                ejemplar = input(f'Ingrese la cantidad de ejemplares para "{titulo}": ')
+                print()
+
+                while not ejemplar.isdigit() or int(ejemplar) < 0:
+                    print('Debe ingresar un número entero mayor o igual a 0')
+                    print()
+                    ejemplar = input(f'Ingrese la cantidad de ejemplares para "{titulo}": ')   
+                    print()
+
+                titulos.append(titulo)
+                posicion = titulos.index(titulo)
+                ejemplar = int(ejemplar)
+                ejemplares.insert(posicion, ejemplar)
+                print(f'Se agregó el nuevo título "{titulo}", con un stock de {ejemplar} ejemplares')
+                print()
+
+                seguir = input('¿Desea agregar más titulos? Marque S para seguir o N para no seguir: ').lower()
+                print()
+                
+                while seguir != 's' and seguir != 'n':
+                    print('Opción ingresada incorrecta')
+                    print()
+                    seguir = input('¿Desea agregar más titulos? Marque S para seguir o N para no seguir: ').lower()
+                    print()
+
+                if seguir == 'n':
+                    break
+
         case '7':
             print('===== Actualizar ejemplares (préstamo/devolución) =====')
             print()
+
+            if len(titulos) == 0:
+                print('No tenes títulos cargados. Primero debes ingresar títulos en la opción 1 - Ingresar títulos')
+                print()
+                continue
+
             titulo = input('Ingrese titulo que desea actualizar ejemplares: ').lower()
             print()
         
@@ -156,30 +209,23 @@ while True:
                 case '1':
                     print('===== Prestamo =====')
                     print()
+
                     if ejemplares[posicion] == 0:
-                        print(f'{titulos[posicion]} no tiene stock')
+                        print(f'"{titulos[posicion]}" no tiene stock suficiente para realizar un prestamo')
                         print()
                         continue
-                    cantidad = input(f'Ingrese la cantidad que desea prestar para el titulo "{titulo}": ')
+                    
+                    ejemplares[posicion] -= 1
+                    print(f'Se realizó el prestamo de "{titulos[posicion]}" satisfactoriamente')
                     print()
-
-                    while not cantidad.isdigit() or int(cantidad) <= 0:
-                        print('La cantidad ingresada debe ser mayor a 0')
-                        print()
-                        cantidad = input(f'Ingrese nuevamente la cantidad que desea prestar para el titulo "{titulo}": ')
-                        print()
-
-                    if int(cantidad) > int(ejemplares[posicion]):
-                        print(f'{titulos[posicion]} no tiene stock suficiente')
-                        continue
-                    ejemplares[posicion] -= int(cantidad)
 
                 case '2':
                     print('===== Devolución =====')
                     print()
-                    cantidad = input(f'Ingrese la cantidad que están devolviendo para el titulo "{titulo}": ')
+
+                    ejemplares[posicion] += 1
+                    print(f'Se realizó la devolución de "{titulos[posicion]}" satisfactoriamente')
                     print()
-                    ejemplares[posicion] += int(cantidad)
         case '8':
             print('Saliendo del programa..')
             print()
