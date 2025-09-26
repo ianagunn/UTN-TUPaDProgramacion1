@@ -1,5 +1,3 @@
-# titulos = ['las cosas que perdimos en el fuego', 'el principito', 'el retrato de dorian gray', 'las mil y una noches', 'romeo y julieta']
-# ejemplares = [1, 5, 3, 0, 15]
 titulos = []
 ejemplares = []
 menu = ['1 - Ingresar títulos',
