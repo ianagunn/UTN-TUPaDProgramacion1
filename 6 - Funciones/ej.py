@@ -1,12 +1,13 @@
-# Crear una función llamada tabla_multiplicar(numero) que reciba un
-# número como parámetro y imprima la tabla de multiplicar de ese
-# número del 1 al 10. Pedir al usuario el número y llamar a la función.
+# Crear una función llamada calcular_promedio(a, b, c) que reciba
+# tres números como parámetros y devuelva el promedio de ellos.
+# Solicitar los números al usuario y mostrar el resultado usando esta
+# función.
 
-def tabla_multiplicar(numero):
-    return 
+def calcular_promedio(a, b, c):
+    return (a+b+c)/3
 
-numero = int(input('Ingrese un numero: '))
+a = float(input('Ingrese el primer número: '))
+b = float(input('Ingrese el segundo número: '))
+c = float(input('Ingrese el tercer número: '))
 
-if numero > 0:
-    for i in range(numero):
-        print(tabla_multiplicar(numero))
+print(f'El promedio es {calcular_promedio(a, b, c)}')

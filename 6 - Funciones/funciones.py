@@ -56,7 +56,59 @@ else:
     print('Ingrese una cantidad de segundos mayor a 0')
     
 # Ejercicio 6
+def tabla_multiplicar(numero):
+    for i in range(1, 11):
+        print(i*numero) 
+
+numero = int(input('Ingrese un numero: '))
+
+if numero > 0:
+    tabla_multiplicar(numero)
+
 # Ejercicio 7
+def operaciones_basicas(a, b):
+    suma = a+b
+    resta = a-b
+    multiplicacion = a*b
+    division = a/b
+    return(suma, resta, multiplicacion, division)
+
+
+a = int(input('\n Ingrese el primer número: '))
+b = int(input('\n Ingrese el segundo número: '))
+
+resultados = operaciones_basicas(a, b)
+
+print('\n ----- Los resultados obtenidos son -----')
+print(f'\n La sumatoria entre el primer y segundo número es: {resultados[0]}')
+print(f'\n La resta entre el primer y segundo número es: {resultados[1]}')
+print(f'\n La multiplicación entre el primer y segundo número es: {resultados[2]}')
+print(f'\n La división entre el primer y segundo número es: {resultados[3]}')
+
 # Ejercicio 8
+def calcular_imc(peso, altura):
+    return(peso/(altura**2))
+
+peso = float(input('Ingrese su peso: '))
+altura = float(input('Ingrese su altura: '))
+
+imc = calcular_imc(peso, altura)
+
+print(f'Tu IMC es {imc}')
+
 # Ejercicio 9
+def celsius_a_fahrenheit(celsius):
+    return celsius+32
+
+celsius = int(input('Ingresa la temperatura en grados celsius: '))
+print(f'La temperatura ingresada equivale a {celsius_a_fahrenheit(celsius)} fahrenheit')
+
 # Ejercicio 10
+def calcular_promedio(a, b, c):
+    return (a+b+c)/3
+
+a = float(input('Ingrese el primer número: '))
+b = float(input('Ingrese el segundo número: '))
+c = float(input('Ingrese el tercer número: '))
+
+print(f'El promedio es {calcular_promedio(a, b, c)}')
