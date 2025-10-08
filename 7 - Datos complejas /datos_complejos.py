@@ -51,6 +51,24 @@ else:
     print(f'\n {buscar} no existe en la lista')
 
 #Ejercicio 5
+frase = input("Ingrese una frase: ")
+
+palabras = frase.split() 
+
+palabras_unicas = set(palabras)
+print("\nPalabras únicas:")
+print(palabras_unicas)
+
+frecuencia = {}
+for palabra in palabras:
+    if palabra in frecuencia:
+        frecuencia[palabra] += 1
+    else:
+        frecuencia[palabra] = 1
+
+print("\nCantidad de veces que aparece cada palabra:")
+print(frecuencia)
+
 #Ejercicio 6
 #Ejercicio 7
 #Ejercicio 8

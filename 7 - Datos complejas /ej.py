@@ -1,4 +1,18 @@
-#  Solicita al usuario una frase e imprime:
-# • Las palabras únicas (usando un set).
-# • Un diccionario con la cantidad de veces que aparece cada palabra.
+# 6) Permití ingresar los nombres de 3 alumnos, y para cada uno una tupla de 3 notas.
+# Luego, mostrá el promedio de cada alumno.
+
+alumnos = {}
+
+for i in range(3):
+    nombre = input("Ingrese el nombre del alumno: ")
+
+    notas = []
+    for j in range(3):
+        nota = float(input(f"Ingrese la nota de {nombre}: "))
+        notas.append(nota)
+    
+    alumnos[nombre] = tuple(notas) 
+
+print("\n----- Promedios -----")
+
 
