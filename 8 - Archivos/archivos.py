@@ -1,12 +1,12 @@
 #1. Escribe agregando inventario al archivo productos.txt
-with open('/Users/ian/Documents/GitHub/UTN-TUPaDProgramacion1/8 - Archivos/productos.txt', 'w') as archivo:
+with open('productos.txt', 'w') as archivo:
     archivo.write('Nombre, Precio, Cantidad\n')
     archivo.write('Destornillador,15000,10\n')
     archivo.write('Martillo,16000,8\n')
     archivo.write('Taladro,100000,5\n')
 
 #2. Leé el archivo producto.txt
-with open('/Users/ian/Documents/GitHub/UTN-TUPaDProgramacion1/8 - Archivos/productos.txt', 'r') as archivo:
+with open('productos.txt', 'r') as archivo:
     lineas = archivo.readlines()
 
 for linea in lineas:
@@ -15,7 +15,7 @@ for linea in lineas:
     print(f'Nombre: {nombre} | Precio: ${precio} | Cantidad: {cantidad}')
 
 #3. Agrega productos al archivo producto.txt
-with open('/Users/ian/Documents/GitHub/UTN-TUPaDProgramacion1/8 - Archivos/productos.txt', 'a') as archivo:
+with open('productos.txt', 'a') as archivo:
     nombre = input('Ingrese el nombre del producto que desea agregar: \n')
     precio = input('Ingrese el precio del producto que desea agregar: \n')
     cantidad = input('Ingrese la cantidad del producto que desea agregar: \n')
@@ -24,7 +24,7 @@ with open('/Users/ian/Documents/GitHub/UTN-TUPaDProgramacion1/8 - Archivos/produ
 #4. Cargar productos en una lsita de diccionario
 productos = []
 
-with open('/Users/ian/Documents/GitHub/UTN-TUPaDProgramacion1/8 - Archivos/productos.txt', 'r') as archivo:
+with open('productos.txt', 'r') as archivo:
     i=0
     for linea in archivo:
         if i != 0:
@@ -54,7 +54,7 @@ if flag == False:
     print('El producto no existe\n')
 
 #6. Cargar productos en una lista de diccionarios
-with open('/Users/ian/Documents/GitHub/UTN-TUPaDProgramacion1/8 - Archivos/productos.txt', 'w') as archivo:
+with open('productos.txt', 'w') as archivo:
     archivo.write('Nombre, Precio, Cantidad\n')
     for p in productos:
         archivo.write(f"{p['nombre']},{p['precio']},{p['cantidad']}\n")

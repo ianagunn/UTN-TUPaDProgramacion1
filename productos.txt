@@ -1,0 +1,4 @@
+Nombre, Precio, Cantidad
+Destornillador,15000,10
+Martillo,16000,8
+Taladro,100000,5
