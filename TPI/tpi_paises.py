@@ -1,7 +1,7 @@
 import os
 import csv
 
-# Archivo CSV
+#Archivo CSV
 nombre_archivo = "paises.csv"
 
 #Crear archivo si no existe
@@ -332,6 +332,6 @@ def menu():
                 print("\nOpción inválida.\n")
 
 
-# Programa principal
+#Programa principal
 crear_archivo()
 menu()
