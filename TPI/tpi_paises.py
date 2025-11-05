@@ -40,18 +40,6 @@ def guardar_paises(paises):
         escritor.writerows(paises)
 
 
-#Mostrar todos los países
-# def mostrar_paises():
-#     print("\n----------- Catálogo de Países -----------")
-#     paises = obtener_paises()
-#     if len(paises) == 0:
-#         print("No hay países cargados.\n")
-#     else:
-#         for p in paises:
-#             print(p["NOMBRE"], "- Población:", p["POBLACION"], "- Superficie:", p["SUPERFICIE"], "km² -", p["CONTINENTE"])
-#         print()
-
-
 #Agregar un nuevo país
 def agregar_pais():
     print("\n----------- Agregar País -----------")
