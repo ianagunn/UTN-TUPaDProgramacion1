@@ -1,4 +1,4 @@
-Descripción del proyecto:
+# Descripción del proyecto:
 
 Este programa permite gestionar información sobre distintos países, aplicando los conceptos fundamentales de listas, diccionarios, funciones, estructuras condicionales y repetitivas vistos en la materia Programación 1.
 
@@ -12,7 +12,7 @@ El programa utiliza un archivo CSV (paises.csv) como base de datos, y ofrece un 
 
 -Mostrar estadísticas generales (mayor/menor población, promedios y cantidad de países por continente).
 
-Datos de la Universidad y la cátedra:
+# Datos de la Universidad y la cátedra:
 
 Universidad Tecnológica Nacional (UTN) – Facultad Regional San Nicolás
 
@@ -24,7 +24,7 @@ Trabajo Práctico Integrador (TPI)
 
 Año: 2025
 
-Integrantes:
+# Integrantes:
 
 -Ian Gunn
 
@@ -36,7 +36,7 @@ Docente Titular
 Docente Tutor
 -Flor Gubiotti
 
-Estructura del proyecto:
+# Estructura del proyecto:
 
 TPI/
 
@@ -48,7 +48,7 @@ README.md                  # Documento explicativo del proyecto
 
 /capturas/                 # Carpeta con imágenes de ejecución
 
-Instrucciones de ejecución
+# Instrucciones de ejecución
 
 1. Requisitos previos:
 
@@ -59,6 +59,7 @@ Instrucciones de ejecución
 2. Ejecución:
 
 -Colocar el archivo paises.csv en la misma carpeta del script.
+
 -Ejecutar el programa desde la terminal: python tpi_paises.py
 -El menú mostrará las siguientes opciones:
     1 - Agregar país
@@ -74,13 +75,13 @@ Instrucciones de ejecución
 Si el archivo paises.csv no existe, el sistema lo creará automáticamente.
 Los campos numéricos (población y superficie) deben ser enteros positivos.
 
-Librerías utilizadas
+# Librerías utilizadas
 
 os: manejo de archivos y verificación de existencia.
 
 csv: lectura y escritura de datos estructurados en formato CSV.
 
-Links
+# Links
 
 Video de presentación: [enlace pendiente]
 
