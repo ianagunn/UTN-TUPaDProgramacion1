@@ -40,10 +40,13 @@ Estructura del proyecto:
 
 TPI/
 
--paises.csv                 # Archivo CSV con los datos base
--tpi_paises.py              # Código fuente principal
--README.md                  # Documento explicativo del proyecto
--/capturas/                 # Carpeta con imágenes de ejecución
+paises.csv                 # Archivo CSV con los datos base
+
+tpi_paises.py              # Código fuente principal
+
+README.md                  # Documento explicativo del proyecto
+
+/capturas/                 # Carpeta con imágenes de ejecución
 
 Instrucciones de ejecución
 
