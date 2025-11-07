@@ -14,11 +14,11 @@ El programa utiliza un archivo CSV (paises.csv) como base de datos, y ofrece un 
 
 Datos de la Universidad y la cátedra:
 
--Universidad Tecnológica Nacional (UTN) – Facultad Regional San Nicolás
--Tecnicatura Universitaria en Programación (Modalidad a Distancia)
--Materia: Programación 1
--Trabajo Práctico Integrador (TPI)
--Año: 2025
+Universidad Tecnológica Nacional (UTN) – Facultad Regional San Nicolás
+Tecnicatura Universitaria en Programación (Modalidad a Distancia)
+Materia: Programación 1
+Trabajo Práctico Integrador (TPI)
+Año: 2025
 
 Integrantes:
 
